@@ -1,0 +1,72 @@
+<div class="filter">
+	<ul class="filter__list">
+		<li class="filter__item" ng-repeat="type in vm.itemsService.typeStates">
+			<input type="checkbox" class="checkbox" ng-model="type.isChecked" id="{{type.name}}">
+			<label class="filter__label" for="{{type.name}}"></label>
+			<span class="filter__title">{{::type.name}}</span>
+		</li>
+	</ul>
+	<button class="button" ng-click="vm.selectAll()">select all product</button>
+</div>
+<div class="section">
+	<div class="filter-sorting">
+		<span class="filter-sorting__header">sort by
+		</span>
+		<label classs="filter-sorting__label">
+		<select class="filter-sorting__select" 
+		ng-model="vm.singleSelect" 
+		ng-options="option for option in vm.itemsService.sorted">
+		</select>
+		</label>
+		<div class="arrow arrow_for-select"></div>
+	</div>
+
+	<section ng-repeat="type in vm.itemsService.getAllByTypes() track by $index">
+		<div class="itemsOfType" ng-show="type.isChecked && type.goods.length">
+
+			<div class="itemsOfType__header">
+				<div class="itemsOfType__title itemsOfType__title_even" ng-class-even="'itemsOfType__title_odd'">
+					<span>{{::type.name}}</span>
+				</div>
+				<div class="itemsOfType__switch-page itemsOfType__switch-page_even" ng-class-even="'itemsOfType__switch-page_odd'">
+					<div class="slick">
+						<div>1/5</div>
+						<div>2/5</div>
+						<div>3/5</div>
+						<div>4/5</div>
+						<div>5/5</div>
+					</div>
+					<div class="arrow arrow_left arrow_color-brown"></div>
+					<div class="arrow arrow_right arrow_color-brown"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<div class="items-list">
+				<section ng-repeat="item in type.goods | orderBy: vm.singleSelect">
+					<div class="item">
+						<div class="item__header">
+							<div class="item__attribute">{{::item.attribute.name}}
+								<div 
+								ng-if="item.attribute.values.length !== 0" class="arrow">
+								</div>
+							</div>
+							<div ng-if="item.colors.length !== 0" class="item-colors">
+								<div ng-repeat="color in item.colors" class="item-colors__color" style="background-color:{{color}};"></div>
+							</div>
+
+						</div>
+
+						<div class="item__img" ng-click="vm.toItem(item)">
+							<img ng-src="img/{{item.smallImg}}" alt="smallItem">
+						</div>
+
+						<div class="item__footer">
+							<div class="item__name">{{item.name}}</div>
+							<div class="item__price">{{item.price | number:2}}</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</section>
+</div>

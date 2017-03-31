@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="testApp" >
+
+<head>
+	<meta charset="UTF-8">
+	<title>testProject</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand:700" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="slick/slick.css" />
+	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-ui-router.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/itemsService.js"></script>
+	<script src="js/homeController.js"></script>
+	<script src="js/itemController.js"></script>
+</head>
+
+<body class="page">
+	<header class="header">
+		<div class="logo">
+			<a href="https://www.google.com/">
+				<img src="img/logo.png">
+			</a>
+		</div>
+	</header>
+	<ui-view></ui-view>
+	<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
+	<script type="text/javascript" src="slick/slick.min.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			setTimeout(function() {
+				$('.slick').slick();
+			}, 0)
+		});
+	</script>
+
+</body>
+
+</html>

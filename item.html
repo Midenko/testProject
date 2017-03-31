@@ -1,0 +1,42 @@
+<div class="page">
+	<div class="filter">
+		<div class="filter_cursor-pointer">
+			<div class="arrow arrow_left"></div>
+			<button class="button button_forBig" ng-click="vm.backHome()">Back to catalog</button>
+		</div>
+	</div>
+
+
+	<div class="section">
+		<div class="itemsOfType__header itemsOfType__header_forBig">
+			<div class="itemsOfType__title itemsOfType__title_even">
+				{{vm.item.name}}
+			</div>
+		</div>
+		<div class="item item_big">
+			<div>
+				<img class="bigImg" ng-src="img/{{vm.item.bigImg}}" alt="bigItem">
+			</div>
+			<div class="item-properties">
+				<div>
+					<ul class="item-properties__values">
+						<li class="item__price item__price_float-none">{{vm.item.price | number : 2}}
+						</li>
+						<li ng-if="vm.item.colors.length !== 0" class="item-colors item-colors_float-none">
+							<div ng-repeat="color in vm.item.colors" class="item-colors__color" style="background-color:{{color}};"></div>
+						</li>
+						<li ng-if="vm.item.attribute.values.length !== 0">{{vm.item.attribute.values.join(',')}}
+						</li>
+					</ul>
+				</div>
+				<div>
+					<ul class="item-properties__names">
+						<li ng-repeat="prop in vm.info">
+							<span>{{prop}}</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

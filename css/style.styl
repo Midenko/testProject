@@ -1,0 +1,274 @@
+.page
+	width: 100%
+	margin: 0 auto
+	font-family: 'Quicksand', sans-serif
+	color: #424242
+	text-transform: uppercase
+
+.header
+	padding: 25px 0px 28px 0px
+	text-align: center
+	
+.logo
+	display: inline-block
+	
+.filter
+	display: flex
+	justify-content: space-between
+	align-items: center
+	flex-wrap: wrap
+	align-content: space-around
+	padding 45px 96px
+	background-color: #f5f6f7
+	color: #333333
+	font-size: 18px
+	font-weight: 700
+	&__list
+		display: flex
+	&__item
+		margin-left: 40px
+		&:first-child
+			margin-left: 0
+	&__title
+		padding-left: 45px
+	&_cursor-pointer
+		cursor: pointer
+		display: inline-block
+			
+/*.checkbox:not(checked) {
+	position: absolute;
+	opacity: 0;
+}
+.checkbox:not(checked)+label {
+	position: relative;
+}
+.checkbox:not(checked)+label:before {
+	content: '';
+	position: absolute;
+	top: -4px;
+	left: 0px;
+	width: 25px;
+	height: 24px;
+	border: 2px solid #cccccc;
+	border-radius: 3px;
+	background-color: #ffffff;
+}
+.checkbox:checked+label:after {
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: 8px;
+	width: 9px;
+	height: 12px;
+	border-right: 3px solid #aa9b77;
+	border-bottom: 3px solid #aa9b77;
+	transform: rotate(45deg);
+}
+.checkbox:checked+label:before {
+	border-color: #aa9b77;
+}*/	
+		
+.button 
+	border-radius: 3px
+	background-color: #aa9b77
+	width: 204px
+	height: 52px
+	color: #ffffff
+	font-size: 14px
+	text-transform: uppercase
+	font-family: 'Quicksand', sans-serif
+	&_forBig
+		color: #333333
+		font-size: 18px
+		border: none
+		background-color:  #f5f6f7
+		padding-left: 30px
+		
+	
+.section 
+	padding: 27px 96px
+	
+.filter-sorting
+	padding-bottom: 45px
+	&__header
+		color:  #424242
+		font-size: 20px
+		font-weight: 700
+		padding-right: 30px
+	&__select
+		-webkit-appearance: none
+		border: none
+		text-transform: uppercase
+		font-size: 16px
+		font-weight: 700
+		color: #424242
+		padding-right: 20px
+	&__label
+		padding: 5px 80px 5px 0px
+	
+.itemsOfType
+	&__title
+		padding-bottom: 48px
+		overflow: hidden;
+		font-size: 22px;
+		font-weight: 700;
+		&_even
+			text-align: left;
+			&::after
+				content: ""
+				display: inline-block
+				vertical-align: middle
+				width: 100%
+				height: 2px
+				background-color: #cccccc
+				position: relative
+				margin-right: -100%
+				right: -10px
+		&_odd
+			text-align: right;
+			&::before
+				content: ""
+				display: inline-block
+				vertical-align: middle
+				width: 100%
+				height: 2px
+				background-color: #cccccc
+				position: relative
+				margin-left: -100%
+				left: -10px
+	&__switch-page
+		color:  #aa9b77
+		font-size: 16px
+		font-weight: 700
+		&_even
+			float: right
+		&_odd
+			float: left
+	&__header
+		&::after
+			content: ""
+			visibility: hidden
+			display: block
+			height: 0
+			clear: both
+		&_forBig
+			padding: 67px 0px;
+
+.slick {
+	width: 35px
+	font-size: 16px
+	font-weight: 700
+}
+		
+.items-list
+	display: flex
+	flex-wrap: wrap
+	flex-direction: row
+	justify-content: space-between
+	align-content: space-around
+
+.item
+	box-sizing: border-box
+	background-color: #f5f6f7
+	width: 320px
+	height: 378px
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	align-items: center
+	padding: 26px
+	margin-bottom: 99px
+	&:hover
+		padding: 20px
+		border-radius: 3px
+		border: 6px solid #aa9b77
+	&__attribute
+		float: left
+	&__header
+	&__footer
+		width: 260px
+	&__name
+		float: left
+		color: #aa9b77
+		font-size: 18px
+		line-height: 25px
+	&__price
+		float: right
+		font-size: 22px
+		font-weight: 700
+		&::after
+			content: "\20AC"
+			font-family: 'Myriad Pro'
+			color: #424242
+			font-size: 22px
+			font-weight: 400
+		&_float-none
+			float: none
+			direction: ltr
+	&_big
+		width: auto
+		height: auto
+		padding: 96px 36px 76px 36px
+		flex-direction: row
+		justify-content: flex-start
+		flex-wrap: wrap	
+		&:hover
+			padding: 90px 30px 70px 30px
+			border-radius: 3px
+			border: 6px solid #aa9b77
+	&-properties
+		align-self: flex-start
+		position: relative
+		top: 7%
+		display: flex
+		font-size: 22px
+		&__values
+			direction: rtl
+		&__names
+			direction: ltr
+		li
+			padding-top:20px
+			padding-left: 43px;
+
+.item-colors
+	float: right
+	&__color
+		float: right
+		border-radius: 50%
+		width: 22px
+		height: 21px
+		margin-left: 5px
+	&_float-none
+		float: none
+		display: inline-block
+
+.arrow
+	width: 8px
+	height: 8px
+	border-right: 2px solid black
+	border-bottom: 2px solid black
+	display: inline-block
+	transform: rotate(45deg)
+	&_left
+		transform: rotate(135deg)
+	&_right
+		transform: rotate(-45deg)
+	&_color-brown
+		border-color: #aa9b77
+	&_for-select
+		margin: 0px 0px 3px -15px
+		pointer-events: none
+		
+.bottom
+	height: 17px
+	
+.bigImg
+	max-width: 100%
+	
+@media (max-width: 925px)
+	.filter
+		flex-direction: column
+		&__list
+			margin-bottom: 20px
+
+
